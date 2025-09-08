@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Awan Electronics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin:0;
+      background:#fff;
+    }
+    img {
+      max-width:100%;
+      height:auto;
+      display:block;
+      margin:0 auto 20px auto; /* spacing between images */
+    }
+  </style>
+</head>
+<body>
+  <!-- Images will be inserted by JavaScript -->
+
+  <script>
+    // Insert images with lazy loading
+    for (let i = 1; i <= 11; i++) {
+      let img = document.createElement("img");
+      img.src = "images/page (" + i + ").jpg";
+      img.loading = "lazy"; // enable lazy loading
+      document.body.appendChild(img);
+    }
+
+    // Disable right click
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    });
+
+    // Disable common shortcut keys
+    document.addEventListener("keydown", function(e) {
+      // F12
+      if (e.keyCode == 123) e.preventDefault();
+      // Ctrl+Shift+I
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) e.preventDefault();
+      // Ctrl+U
+      if (e.ctrlKey && e.keyCode == 85) e.preventDefault();
+      // Ctrl+S
+      if (e.ctrlKey && e.keyCode == 83) e.preventDefault();
+    });
+  </script>
+</body>
+</html>
